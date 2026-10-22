@@ -1,0 +1,72 @@
+[
+  {
+    "sourceFile": "cristiano-ronaldo-5120x2880-14055.png",
+    "outputFile": "sports-cristiano-ronaldo.webp",
+    "cardId": "sports-cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "category": "sports-legends",
+    "cropOffset": null,
+    "srcSizeKB": "209.5",
+    "destSizeKB": "7.1",
+    "destSizeBytes": 7312,
+    "width": 1080,
+    "height": 680,
+    "status": "pass"
+  },
+  {
+    "sourceFile": "max-verstappen-3840x2160-23591.jpg",
+    "outputFile": "sports-max-verstappen.webp",
+    "cardId": "sports-max-verstappen",
+    "name": "Max Verstappen",
+    "category": "sports-legends",
+    "cropOffset": null,
+    "srcSizeKB": "1572.4",
+    "destSizeKB": "46.0",
+    "destSizeBytes": 47120,
+    "width": 1080,
+    "height": 680,
+    "status": "pass"
+  },
+  {
+    "sourceFile": "prabhas.jpg",
+    "outputFile": "sports-prabhas.webp",
+    "cardId": "sports-prabhas",
+    "name": "Prabhas",
+    "category": "sports-legends",
+    "cropOffset": null,
+    "srcSizeKB": "33.9",
+    "destSizeKB": "81.7",
+    "destSizeBytes": 83614,
+    "width": 1080,
+    "height": 680,
+    "status": "pass"
+  },
+  {
+    "sourceFile": "rdj.jpg",
+    "outputFile": "sports-rdj.webp",
+    "cardId": "sports-rdj",
+    "name": "Robert Downey Jr.",
+    "category": "sports-legends",
+    "cropOffset": null,
+    "srcSizeKB": "177.3",
+    "destSizeKB": "63.0",
+    "destSizeBytes": 64512,
+    "width": 1080,
+    "height": 680,
+    "status": "pass"
+  },
+  {
+    "sourceFile": "vk.jpg",
+    "outputFile": "sports-virat-kohli.webp",
+    "cardId": "sports-virat-kohli",
+    "name": "Virat Kohli",
+    "category": "sports-legends",
+    "cropOffset": null,
+    "srcSizeKB": "399.3",
+    "destSizeKB": "61.6",
+    "destSizeBytes": 63060,
+    "width": 1080,
+    "height": 680,
+    "status": "pass"
+  }
+]

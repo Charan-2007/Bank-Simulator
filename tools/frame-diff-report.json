@@ -1,0 +1,30 @@
+[
+  {
+    "cardId": "cars-nsx-gtr-rain",
+    "name": "Honda NSX rain",
+    "psnr1_4": "36.654394",
+    "psnr4_7": "36.435689",
+    "isDistinct": true
+  },
+  {
+    "cardId": "cars-lamborghini",
+    "name": "Lamborghini Neon",
+    "psnr1_4": "34.354004",
+    "psnr4_7": "33.208048",
+    "isDistinct": true
+  },
+  {
+    "cardId": "abstract-golden-crown",
+    "name": "Gothic Golden Crown",
+    "psnr1_4": "23.554270",
+    "psnr4_7": "23.363420",
+    "isDistinct": true
+  },
+  {
+    "cardId": "superheroes-miles-morales-purple-city",
+    "name": "Miles Morales Neon City",
+    "psnr1_4": "22.689102",
+    "psnr4_7": "19.077211",
+    "isDistinct": true
+  }
+]

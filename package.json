@@ -1,0 +1,23 @@
+{
+  "name": "novabank",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=server run dev",
+    "dev:server": "npm --workspace=server run dev",
+    "server:ci": "npm --prefix server ci",
+    "server:start": "npm --prefix server start",
+    "start": "npm --prefix server start",
+    "stress": "node tools/stress-test.js",
+    "test": "npm --workspace=server test",
+    "test:server": "npm --workspace=server test"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.14.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "appId": "com.novabank.sim",
+  "appName": "NovaBank",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true,
+    "androidScheme": "http"
+  },
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "DARK",
+      "backgroundColor": "#1b4f9c"
+    }
+  }
+}

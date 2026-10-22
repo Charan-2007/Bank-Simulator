@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NovaBank</string>
+    <string name="title_activity_main">NovaBank</string>
+    <string name="package_name">com.novabank.sim</string>
+    <string name="custom_url_scheme">com.novabank.sim</string>
+</resources>

@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files
+*.env
+**/*.env
+*.env.*
+**/*.env.*
+!*.env.example
+!**/*.env.example
+/server/.env
+/client/.env
+/.env
+
+# Build & Deployment Outputs
+/client/dist/
+/deploy/
+/client/android/build/
+/client/android/.gradle/
+/client/android/app/build/
+.capacitor/
+
+# Media Archives (Never commit raw source or transcoded media bundles to repo)
+/Cards/
+/server/public/media/
+
+# Test artifacts and logs
+/docs/test-artifacts/
+*.log
+**/*.log
+.system_generated/
+
+# Scratch tools
+tools/scratch/
+
+# Vite cache
+.vite/
+client/.vite/

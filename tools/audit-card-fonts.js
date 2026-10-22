@@ -1,0 +1,92 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawn } from 'node:child_process';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const EDGE_PATH = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+
+const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/orbitron/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/anton/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/press-start-2p/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/bangers/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/cinzel/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/bebas-neue/400.css">
+  <link rel="stylesheet" href="../client/node_modules/@fontsource/dm-sans/400.css">
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    .font-row { margin-bottom: 24px; border-bottom: 1px solid #333; padding-bottom: 12px; }
+    .font-name { font-size: 14px; color: #aaa; margin-bottom: 6px; }
+    .card-num { font-size: 18px; font-variant-numeric: tabular-nums; letter-spacing: 0.15em; }
+    .bullet-test { display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Font Glyph & Readability Audit</h1>
+  <div id="results"></div>
+
+  <script>
+    const fonts = [
+      { id: 'orbitron', name: 'Orbitron', css: 'Orbitron, sans-serif' },
+      { id: 'anton', name: 'Anton', css: 'Anton, sans-serif' },
+      { id: 'press-start-2p', name: 'Press Start 2P', css: '"Press Start 2P", monospace' },
+      { id: 'bangers', name: 'Bangers', css: 'Bangers, sans-serif' },
+      { id: 'cinzel', name: 'Cinzel', css: 'Cinzel, serif' },
+      { id: 'bebas-neue', name: 'Bebas Neue', css: '"Bebas Neue", sans-serif' },
+      { id: 'dm-sans', name: 'DM Sans', css: '"DM Sans", sans-serif' }
+    ];
+
+    document.fonts.ready.then(() => {
+      const container = document.getElementById('results');
+      const auditLog = [];
+
+      fonts.forEach(f => {
+        const row = document.createElement('div');
+        row.className = 'font-row';
+
+        // Check if font has glyph for '•' (U+2022) using canvas measurement comparison with AdobeBlank/fallback
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.font = '32px ' + f.css;
+        const widthBullet = ctx.measureText('•').width;
+        const widthStar = ctx.measureText('*').width;
+        const widthDigit = ctx.measureText('8').width;
+
+        const hasBullet = document.fonts.check('16px ' + f.css, '•');
+
+        const isPressStart = f.id === 'press-start-2p';
+
+        row.innerHTML = \`
+          <div class="font-name">\${f.name} (has bullet '•': \${hasBullet})</div>
+          <div class="card-num" style="font-family: \${f.css};">
+            Masked (bullet): 9000 •••• •••• 9012<br>
+            Masked (star):   9000 **** **** 9012<br>
+            Revealed:        9000 1234 5678 9012
+          </div>
+        \`;
+        container.appendChild(row);
+
+        auditLog.push({
+          font: f.name,
+          hasBullet,
+          widthBullet,
+          widthDigit
+        });
+      });
+
+      window.auditResults = auditLog;
+      console.log('AUDIT_COMPLETE:' + JSON.stringify(auditLog));
+    });
+  </script>
+</body>
+</html>`;
+
+const outPath = path.resolve(__dirname, 'font-glyph-audit.html');
+fs.writeFileSync(outPath, htmlContent, 'utf8');
+console.log('Generated font audit HTML at', outPath);
+process.exit(0);
